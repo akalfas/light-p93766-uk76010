@@ -18,13 +18,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: 'maven'
-    - name: one
-      run: mvn --batch-mode org.apache.maven.plugins:maven-dependency-plugin:3.1.2:resolve-plugins
-    - name: two
-      run: mvn --batch-mode de.qaware.maven:go-offline-maven-plugin:1.2.6:resolve-dependencies
-    - name: three
-      run: mvn --batch-mode org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean -Dmaven.clean.failOnError=false
-    - name: four
-      run: mvn --batch-mode org.jacoco:jacoco-maven-plugin:prepare-agent package
+    - name: mvn
+      run: mvn package
 
 
