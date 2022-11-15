@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/light" mode="merge"/>
+    <filter root="/content/light" mode="merge"/>
+    <filter root="/content/dam/light/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/light" mode="merge"/>
+    <filter root="/content/dam/formsanddocuments-themes/light" mode="merge"/>
+    <filter root="/content/dam/formsanddocuments-fdm/light" mode="merge"/>
+    <filter root="/content/dam/light/sample_logo.png" mode="merge"/>
+    <filter root="/content/dam/light/sample_terms.png" mode="merge"/>
+</workspaceFilter>
