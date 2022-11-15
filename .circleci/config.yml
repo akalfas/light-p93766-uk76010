@@ -1,26 +1,8 @@
-version: 2
-jobs:
-  build:
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-acceptance-{{ checksum "pom.xml" }}
-            - v1-dependencies-unit-{{ checksum "pom.xml" }}
-            - v1-dependencies-compile-{{ checksum "pom.xml" }}
-      - run:
-          name: one
-          command: mvn --batch-mode org.apache.maven.plugins:maven-dependency-plugin:3.1.2:resolve-plugins
-      - run:
-          name: two
-          command: mvn --batch-mode de.qaware.maven:go-offline-maven-plugin:1.2.6:resolve-dependencies
-      - run:
-          name: three
-          command: mvn --batch-mode org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean -Dmaven.clean.failOnError=false
-      - run:
-          name: four
-          command: mvn --batch-mode org.jacoco:jacoco-maven-plugin:prepare-agent package
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: v1-dependencies-compile-{{ checksum "pom.xml" }}
+version: '2.1'
+orbs:
+  maven: circleci/maven@1.4.0
+workflows:
+  maven_test:
+    jobs:
+      - maven/test:
+          command: 'package'
