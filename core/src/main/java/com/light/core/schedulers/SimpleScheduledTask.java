@@ -34,14 +34,14 @@ public class SimpleScheduledTask implements Runnable {
 
     @ObjectClassDefinition(name="A scheduled task",
                            description = "Simple demo for cron-job like task with properties")
-    public static @interface Config {
+    public @interface Config {
 
         @AttributeDefinition(name = "Cron-job expression")
-        String scheduler_expression() default "*/30 * * * * ?";
+        String schedulerExpression() default "*/30 * * * * ?";
 
         @AttributeDefinition(name = "Concurrent task",
                              description = "Whether or not to schedule this task concurrently")
-        boolean scheduler_concurrent() default false;
+        boolean schedulerConcurrent() default false;
 
         @AttributeDefinition(name = "A parameter",
                              description = "Can be configured in /system/console/configMgr")
