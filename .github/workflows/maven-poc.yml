@@ -19,6 +19,9 @@ jobs:
         distribution: 'adopt'
         cache: 'maven'
     - name: mvn
-      run: mvn package
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akalfas_light-p93766-uk76010
 
 

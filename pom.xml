@@ -56,6 +56,10 @@
         <aem.sdk.api>2022.10.9398.20221020T071514Z-220900</aem.sdk.api>
         <aemanalyser.version>1.4.10</aemanalyser.version>
         <componentGroupName>light</componentGroupName>
+
+        <sonar.organization>akalfas</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
     </properties>
 
     <build>
